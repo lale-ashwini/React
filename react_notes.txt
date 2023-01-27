@@ -1,0 +1,48 @@
+/************************* Method 1 : Render Element using plain javascript*******************************/
+
+//This is js code to render h1 tag over root Div
+/*const heading1=document.createElement("h1");
+heading1.innerHTML="Hello World";
+const rootDiv=document.getElementById("root");
+rootDiv.append(heading1);*/
+
+/*************************Method 2 : Render Element using react CDN*******************************/
+
+//This is plain react code for rendering h1 tage over root element to use react need react CDN loberary
+/** add this CDN in index.html file
+ * <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+ <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+ * **/
+/*const heading1=React.createElement("h1",{},"This react's first heading element");
+const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(heading1);*/
+
+/************************* Method 3 : Render Element using react pacakge*******************************/
+
+/*To use react without react CDN need to follow following steps
+1.install nodejs and  npm(node package manager)
+2.then init npm using 'npm init' it will create pacakge.json
+3. then install react and react dom using
+ npm install --D react  and 
+ npm install --D react-dom 
+then node-modules and package.lock.json created. In node-modules folder node and node-dom pacakge stored 
+and in pacakge.lock.json files pacakge dependenceies is maintained
+4. To use react and react-dom package use the import statement
+Note:If we use 'import' keyword in js files then js file becomes module so to call that module 
+in jssscript we need to pass type=module parameter
+ 
+import React from "react";
+ import ReactDOM from "react-dom/client";
+
+ const heading1=React.createElement("h1",{},"This is first heading element");
+ const root=ReactDOM.createRoot(document.getElementById('root'));
+ root.render(heading1);
+ **************************************************** *
+modules execute on server so to push the application on server we need bundler.
+webpack and parcel are the bundlers 
+TO install parcel bunder use the following command
+npm install parcel
+and after installation run it using following command
+npx parcel index.html(entry point of application) => it create local server for application
+parcel-cache and dist folder are created after execution of parcel
+parcel cache is space for parcel and dist folder store the miniefd code of application */
