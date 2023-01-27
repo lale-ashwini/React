@@ -23,7 +23,7 @@ root.render(heading1);*/
 1.install nodejs and  npm(node package manager)
 2.then init npm using 'npm init' it will create pacakge.json
 3. then install react and react dom using
- npm install --D react  and 
+ npm install --D react  and (--D / --save-dev => used to install package in dev dependenceies)
  npm install --D react-dom 
 then node-modules and package.lock.json created. In node-modules folder node and node-dom pacakge stored 
 and in pacakge.lock.json files pacakge dependenceies is maintained
@@ -38,11 +38,39 @@ import React from "react";
  const root=ReactDOM.createRoot(document.getElementById('root'));
  root.render(heading1);
  **************************************************** *
-modules execute on server so to push the application on server we need bundler.
-webpack and parcel are the bundlers 
-TO install parcel bunder use the following command
-npm install parcel
-and after installation run it using following command
-npx parcel index.html(entry point of application) => it create local server for application
-parcel-cache and dist folder are created after execution of parcel
-parcel cache is space for parcel and dist folder store the miniefd code of application */
+ Parcel: 
+    modules execute on server so to push the application on server we need bundler.
+    webpack and parcel are the bundlers 
+    TO install parcel bunder use the following command
+    npm install parcel
+    and after installation run it using following command
+    npx parcel index.html(entry point of application) => it create local server for application
+    parcel-cache and dist folder are created after execution of parcel
+    parcel cache is space for parcel and dist folder store the miniefd code of application 
+ Features of Parcel:
+       
+
+Babel: babel comes as dependecies of parcel
+  parcel or bebel can not autmatically remove console.log.There need to be done setup
+  first install bebel-transform-remove-console in dev dependenceies using following commnad 
+  npm install babel-plugin-transform-remove-console --save-dev
+  use this package using .babelrc: this is configuration file for babel
+
+JSX: react.createElement=>object=>HTML DOM
+  //react.createElement gives object then object is converted to HTML DOME
+  JSX is nothing but react.createElement
+  bebel convert the JSX code to the react.createElement at the end of the day JSX is object
+  Features of JSX:
+        Readability
+        Maintability
+        No repeatation
+JSX take care of xss attck.It doese code sinitization before renderring data
+
+Components:Name of Component should start with Capital letter
+ 1.Functional Component:New way of writing code: It is js normal function that returnsome piace of react element,JSX,component  itslef
+ To render functionalComponent use the recangle tag and wrap in it
+ ex root.render(<functionalComponent/>);
+Passing componnet into component is called component composition
+ 2.Class Component:Old way of writing code
+
+*/
